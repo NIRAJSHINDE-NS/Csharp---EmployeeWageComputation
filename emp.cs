@@ -1,25 +1,29 @@
-namespace EmployeeWage
+namespace ConsoleApp1
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("WELCOME TO EMPLOYEE WAGE COMPUTATION PROGRAM");
-            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("This is the employee wage program");
+            Random rd = new Random();
+            int attendance=rd.Next(0,2);
+            int salary = 0;
+            const int FullDayHour = 8;
+            const int WagePerHour = 20;
 
-            Random random = new Random();
-            int attendance = random.Next(0, 2);
 
-            //Checking if the Employee is Present or not
-            if (attendance == 1)
+            if (attendance == 0 )
             {
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is present");
+                salary = FullDayHour * WagePerHour;
+                Console.WriteLine("The salary of the emloyee is :  " + salary);
             }
-            else
+            else 
             {
-                Console.WriteLine("Employee is Absent");
+                Console.WriteLine("Employee is absent");
+                Console.WriteLine("salary of the employee is :  " + salary );
             }
-            Console.ReadLine();
+
         }
     }
 }
