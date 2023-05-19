@@ -1,54 +1,40 @@
-using Microsoft.VisualBasic;
-using System.Drawing;
-using System.Globalization;
-
-namespace ConsoleApp1
+﻿namespace Employee
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is the employee wage program");
+            Console.WriteLine("WELCOME TO EMPLOYEE WAGE COMPUTATION PROGRAM");
+            Console.WriteLine("--------------------------------------------");
+
+            Random random = new Random();
+
+            int salary = 0, daily_hour = 0, total_working_hour = 0, monthly_salary = 0 ;
+            int salary = 0, daily_hour = 0, total_working_hour = 0, monthly_salary = 0 , day =1;
+
+            //Constant variables
+            const byte IS_PRESENT_FULL_TIME = 1;
+            const byte IS_PRESENT_PART_TIME = 2;
+            const byte WAGE_PER_HOUR = 20;
+            const byte TOTAL_WORKING_DAYS = 20;
+            const byte MAX_WORKING_HOURS = 100;
+
+        
+
+            for(int day=1; day<=TOTAL_WORKING_DAYS; day++)
+            
+            while(day <= TOTAL_WORKING_DAYS && total_working_hour <= MAX_WORKING_HOURS)
+            {
+                int attendance = random.Next(0, 3);
+                switch (attendance)            
+                Console.WriteLine("Total working hours : " + total_working_hour);
+                Console.WriteLine("--------------------------------------------");
+                day++;
+            }
 
            
-            int salary = 0;
-            const int WagePerHour = 20;
-            const int present = 0;
-            const int absent = 1;
-            const int month = 20;
-            int dailyHour = 0;
-            const int TotalWorkingDays = 20;
-            const int MaxWorkingHours = 100;
-
-            for (int i = 0; i <= TotalWorkingDays; i++)
-            {
-                for (int j = 0; j <= MaxWorkingHours; j++) ;
-                {
-                    Random rd = new Random();
-                    int attendance = rd.Next(0, 3);
-
-                    switch (attendance)
-                    {
-                        case present:
-                            Console.WriteLine("The employee is present full time  ");
-                            dailyHour = 8;
-                            break;
-                        case absent:
-                            Console.WriteLine("The employee is absent ");
-                            dailyHour = 0;
-                            break;
-                        default:
-                            Console.WriteLine("The employee is present part time ");
-                            dailyHour = 4;
-                            break;
-                    }
-
-                    salary = dailyHour * WagePerHour;
-                    Console.WriteLine("The salary of the emloyee is :  " + salary + " /- rs");
-
-                    Console.WriteLine("The monthly salary of the employee is :  " + month * salary + " /- rs");
-                }
-            }
-        }       
+            monthly_salary = total_working_hour * WAGE_PER_HOUR;
+            Console.WriteLine("Monthly salary of Employee is Rs." + monthly_salary);
+        }
     }
 }
